@@ -1,0 +1,50 @@
+# ============================================================
+# DEFAULT
+management:
+#  server:
+#    port: 8081
+#  endpoints:
+#    web:
+#      exposure:
+#        include: health,prometheus
+#  endpoint:
+#    health:
+#      probes:
+#        enabled: true
+#  health:
+#    livenessstate:
+#      enabled: on
+#    readinessstate:
+#      enabled: on
+app:
+  version: v1
+logging:
+  level:
+    org:
+      springframework:
+        data:
+          mongodb:
+            core:
+              MongoTemplate: DEBUG
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://admin:3YOHgzBTYoJN8KDA@cluster0.xu9kqkr.mongodb.net/?retryWrites=true&w=majority
+      database: cluster0
+  main:
+    web-application-type: reactive
+    banner-mode: off
+    allow-circular-references: true
+    allow-bean-definition-overriding: true
+  cloud:
+    discovery:
+      enabled: false
+  application:
+    name: prj1
+  # Datasource
+  config:
+    activate:
+      on-profile: DEFAULT
+
+
+
